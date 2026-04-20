@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import React, { useState } from 'react';
+import fotoAndif from './assets/fotoo.png';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -26,11 +28,11 @@ const App = () => {
               <div className="relative group w-72 h-72 md:w-[32rem] md:h-[32rem] flex-shrink-0">
                  <div className="absolute -inset-10 bg-blue-600/10 blur-[120px] pointer-events-none group-hover:bg-blue-600/20 transition-all duration-1000"></div>
                  <img 
-                   src="src/assets/foto.png" 
-                   alt="Andi Magfirah Maqbul" 
-                   className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-1000 drop-shadow-2xl"
-                   onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white/5 font-black text-9xl uppercase">AM</div>'; }}
-                 />
+                  src={fotoAndif} 
+                  alt="Andi Magfirah Maqbul" 
+                  className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-1000 drop-shadow-2xl"
+                  onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white/5 font-black text-9xl uppercase">AM</div>'; }}
+                />
               </div>
             </section>
 
