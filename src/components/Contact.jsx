@@ -84,7 +84,7 @@ function Contact() {
 
           {/* OPTIONAL WA BUTTON */}
           <a
-            href="https://wa.me/6285255196113?text=Halo%20Andi,%20saya%20tertarik%20dengan%20portfolio%20Anda"
+            href="https://wa.me/6285255196113?text=Halo%20,%20saya%20tertarik%20dengan%20portfolio%20Anda"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 block text-center border border-green-500 text-green-500 py-3 rounded-lg hover:bg-green-500 hover:text-white transition"
