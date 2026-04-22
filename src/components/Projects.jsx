@@ -82,7 +82,7 @@ function Projects() {
     <div className="min-h-screen px-6 py-20 bg-gray-50 dark:bg-gray-950">
 
       <h2 className="text-3xl md:text-4xl font-bold text-green-500 text-center mb-14">
-        Pengalaman & Project
+        Project
       </h2>
 
       <motion.div
