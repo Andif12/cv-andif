@@ -51,7 +51,7 @@ function Contact() {
             </a>
 
             <a
-              href="mailto:andifff12@gmail.com"
+              href="mailto:andimagfirahmaqbul@gmail.com"
               className="text-gray-500 dark:text-gray-400 hover:text-green-500 hover:scale-125 transition"
             >
               <FaEnvelope />
@@ -76,7 +76,7 @@ function Contact() {
           </h3>
 
           <a
-            href="mailto:andifff12@gmail.com?subject=Kontak%20dari%20Portfolio&body=Halo%."
+            href="mailto:andimagfirahmaqbul@gmail.com?subject=Kontak%20dari%20Portfolio&body=Halo%."
             className="block text-center bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition"
           >
             Kirim via Email

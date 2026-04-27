@@ -22,7 +22,7 @@ function Hero() {
           </h1>
 
           <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-sm">
-            Saya adalah mahasiswa Ilmu Komputer Intitut Teknologi Bacharuddin Jusuf Habibie angkatan 1 yang memiliki ketertarikan pada Pengembangan web dan Kecerdasaan buatan.
+            Saya adalah fresh graduate Ilmu Komputer Institut Teknologi Bacharuddin Jusuf Habibie angkatan pertama yang memiliki ketertarikan pada pengembangan web dan kecerdasan buatan.
           </p>
 
           {/* BUTTON */}

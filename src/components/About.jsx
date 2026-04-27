@@ -53,8 +53,8 @@ function About() {
           About Me
         </h2>
 
-        <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          Saya adalah mahasiswa Ilmu Komputer yang memiliki ketertarikan pada 
+       <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          Saya adalah fresh graduate Ilmu Komputer yang memiliki ketertarikan pada 
           pengembangan web dan kecerdasan buatan. Saya terbiasa membangun aplikasi 
           berbasis web menggunakan teknologi modern dengan fokus pada fungsionalitas, 
           efisiensi, dan tampilan yang estetis. Selain itu, saya juga mengeksplorasi 

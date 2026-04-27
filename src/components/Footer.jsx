@@ -34,7 +34,7 @@ function Footer() {
           </a>
 
           <a
-            href="mailto:andifff12@gmail.com"
+            href="mailto:andimagfirahmaqbul@gmail.com"
             className="text-gray-600 dark:text-gray-400 hover:text-green-500 hover:scale-125 transition"
           >
             <FaEnvelope />
