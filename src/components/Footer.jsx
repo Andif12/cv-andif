@@ -42,10 +42,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* COPYRIGHT */}
-      {/* <div className="text-center text-gray-500 text-sm pb-4">
-        © {new Date().getFullYear()} Andi Magfirah. All rights reserved.
-      </div> */}
     </footer>
   );
 }
