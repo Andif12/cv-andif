@@ -1,236 +1,171 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
 
 function Projects() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const { lang } = useLanguage();
+
+  const text = {
+    id: {
+      tag: "Portofolio Pilihan",
+      title1: "Project",
+      title2: "Saya",
+      desc:
+        "Kumpulan project unggulan dalam software engineering, computer vision, dan artificial intelligence.",
+      featured: "Unggulan",
+      github: "Lihat GitHub",
+    },
+
+    en: {
+      tag: "Selected Portfolio",
+      title1: "My",
+      title2: "Projects",
+      desc:
+        "Featured projects in software engineering, computer vision, and artificial intelligence.",
+      featured: "Featured",
+      github: "View GitHub",
+    },
+  };
+
+  const t = text[lang];
 
   const projects = [
     {
-      title: "Full-Stack Developer | Sistem Manajemen Kelurahan (SIMAK)",
-      place: "Institut Teknologi BJ Habibie (KKN)",
-      date: "Jul 2025 – Agu 2025",
+      short: "SiSatu",
+      full:
+        lang === "id"
+          ? "Sistem Identifikasi dan Surveillance untuk Tindakan Urgent"
+          : "Identification & Surveillance for Urgent Action",
+      year: "2025",
       featured: true,
-      desc: [
-        "Mengembangkan platform web untuk 22 kelurahan Kota Parepare.",
-        "Menyediakan data penduduk, UMKM, surat menyurat, dan laporan kegiatan.",
-        "Meningkatkan efisiensi administrasi dan transparansi layanan publik.",
-      ],
-      docs: [
-        "/images/projects/simak1.jpg",
-        "/images/projects/simak2.jpg",
-        "/images/projects/simak3.jpg",
-      ],
+      github: "https://github.com/Andif12/PTC",
+      stack: "Python • Colab • CV",
+      desc:
+        lang === "id"
+          ? "Deteksi gerakan anomali ruang kelas."
+          : "Classroom anomaly movement detection.",
     },
+
     {
-      title: "Full-Stack Developer | Sobat Dagang",
-      place: "Dinas Perdagangan Kota Parepare",
-      date: "Mar 2025 – Jun 2025",
+      short: "SURAT ITH",
+      full:
+        lang === "id"
+          ? "Sistem Urusan Resmi Administrasi Tertulis"
+          : "Official Written Administration System",
+      year: "2025",
       featured: true,
-      desc: [
-        "Membangun sistem informasi perdagangan dari nol.",
-        "Dashboard data pasar, pedagang, dan harga komoditas.",
-        "Eksplorasi AI untuk prediksi harga kebutuhan pokok.",
-      ],
-      docs: [
-        "/images/projects/dagang1.jpg",
-        "/images/projects/dagang2.jpg",
-        "/images/projects/dagang3.jpg",
-      ],
+      github: "https://github.com/robertsmithy185/surat-ith",
+      stack: "Laravel • MySQL",
+      desc:
+        lang === "id"
+          ? "Digitalisasi sistem surat menyurat kampus."
+          : "Campus correspondence digitalization.",
     },
+
     {
-      title: "Data Analyst Intern",
-      place: "PT Esaputlii Prakarsa Utama",
-      date: "Okt 2025 – Nov 2025",
-      desc: [
-        "Data cleaning dan rekonsiliasi dataset 5 tahun.",
-        "Analisis pola penjualan untuk identifikasi top seller.",
-        "Membuat dashboard insight untuk manajemen.",
-      ],
-      docs: [
-        "/images/projects/esaputlii1.jpg",
-        "/images/projects/esaputlii2.jpg",
-        "/images/projects/esaputlii3.jpg",
-      ],
+      short: "Portal Akademik",
+      full:
+        lang === "id"
+          ? "Portal Akademik Sederhana"
+          : "Simple Academic Portal",
+      year: "2024",
+      github: "https://github.com/Andif12/Portal-Akademik-Sederhana",
+      stack: "Java • OOP",
+      desc:
+        lang === "id"
+          ? "Simulasi portal akademik mahasiswa."
+          : "Student academic portal simulation.",
     },
+
     {
-      title: "Front-End Developer | Parepare Dalam Genggaman (PDG)",
-      place: "Project Pemerintah Kota Parepare",
-      date: "2024",
-      desc: [
-        "Mengembangkan tampilan aplikasi layanan digital masyarakat.",
-        "UI/UX modern, responsive, dan user friendly.",
-        "Mendukung layanan publik berbasis web.",
-      ],
-      docs: [
-        "/images/projects/pdg1.jpg",
-        "/images/projects/pdg2.jpg",
-        "/images/projects/pdg3.jpg",
-      ],
-    },
-    {
-      title: "Computer Vision | Object Detection",
-      place: "Final Project - Visual Computing",
-      date: "Agu 2024",
-      desc: [
-        "Membangun sistem deteksi objek menggunakan Python.",
-        "Menggunakan OpenCV dan machine learning.",
-        "Implementasi real-time detection berbasis kamera.",
-      ],
-      docs: [
-        "/images/projects/cv1.jpg",
-        "/images/projects/cv2.jpg",
-        "/images/projects/cv3.jpg",
-      ],
-    },
-    {
-      title: "Image Processing Project",
-      place: "Python",
-      date: "Des 2023",
-      desc: [
-        "Pengolahan citra digital menggunakan Python.",
-        "Konversi RGB ke grayscale.",
-        "Filtering dan image enhancement.",
-      ],
-      docs: [
-        "/images/projects/img1.jpg",
-        "/images/projects/img2.jpg",
-        "/images/projects/img3.jpg",
-      ],
+      short: "VanameCounting",
+      full:
+        lang === "id"
+          ? "AI Shrimp Counting System"
+          : "AI Shrimp Counting System",
+      year: "2026",
+      featured: true,
+      github: "https://github.com/Andif12/VanameCounting",
+      stack: "YOLOv11 • ByteTrack • EfficientNet-Lite",
+      desc:
+        lang === "id"
+          ? "Project skripsi menghitung udang vaname otomatis."
+          : "Thesis project for automatic shrimp counting.",
     },
   ];
 
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.12,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.45 },
-    },
-  };
-
   return (
-    <section className="min-h-screen px-6 py-20 bg-gray-50 dark:bg-gray-950">
-      <h2 className="text-3xl md:text-4xl font-bold text-green-500 text-center mb-14">
-        Projects
-      </h2>
+    <section className="py-28 px-6 bg-gray-50 dark:bg-gray-950">
+      {/* Header */}
+      <div className="max-w-4xl mx-auto text-center mb-24">
+        <p className="uppercase tracking-[0.3em] text-green-500 text-xs font-semibold mb-4">
+          {t.tag}
+        </p>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
-      >
+        <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+          {t.title1} <span className="text-green-500">{t.title2}</span>
+        </h2>
+
+        <p className="mt-6 text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          {t.desc}
+        </p>
+      </div>
+
+      {/* Grid */}
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 xl:grid-cols-3 gap-8">
         {projects.map((project, i) => (
           <motion.div
             key={i}
-            variants={item}
-            className={`
-              relative group p-6 rounded-2xl border transition-all duration-300
-              bg-white dark:bg-gray-900
-              border-gray-200 dark:border-gray-800
-              hover:border-green-500
-              hover:-translate-y-2 hover:shadow-2xl
-              ${project.featured ? "ring-2 ring-green-500" : ""}
-            `}
+            initial={{ opacity: 0, y: 70 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45 }}
+            viewport={{ once: true }}
+            className="group relative rounded-[30px] border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-8 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(34,197,94,0.08)] transition-all duration-300"
           >
-            {/* Glow */}
-            <div className="absolute inset-0 rounded-2xl bg-green-400 opacity-0 group-hover:opacity-10 blur-xl transition"></div>
-
             {/* Badge */}
-            {project.featured && (
-              <span className="absolute top-3 right-3 text-xs bg-green-500 text-white px-2 py-1 rounded-md">
-                ⭐ Featured
-              </span>
-            )}
+            <div className="flex justify-between items-center mb-5">
+              <p className="text-sm text-green-500 font-semibold">
+                {project.year}
+              </p>
 
-            {/* Title */}
-            <h3 className="text-lg font-bold leading-snug mb-2 relative z-10">
-              {project.title}
+              {project.featured && (
+                <span className="text-[11px] px-3 py-1 rounded-full bg-green-500 text-white">
+                  {t.featured}
+                </span>
+              )}
+            </div>
+
+            {/* Short Name */}
+            <h3 className="text-2xl font-bold tracking-tight">
+              {project.short}
             </h3>
 
-            {/* Place */}
-            <p className="text-sm text-green-500 mb-1 relative z-10">
-              {project.place}
+            {/* Full Name */}
+            <p className="text-sm text-gray-500 mt-2 leading-relaxed min-h-[40px]">
+              {project.full}
             </p>
 
-            {/* Date */}
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 relative z-10">
-              {project.date}
+            {/* Stack */}
+            <p className="mt-4 text-sm font-medium text-gray-700 dark:text-gray-300">
+              {project.stack}
             </p>
 
-            {/* Description */}
-            <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-5 relative z-10">
-              {project.desc.map((text, index) => (
-                <li key={index} className="flex gap-2">
-                  <span className="text-green-500">▹</span>
-                  {text}
-                </li>
-              ))}
-            </ul>
+            {/* Desc */}
+            <p className="mt-5 text-gray-600 dark:text-gray-400 leading-relaxed min-h-[60px]">
+              {project.desc}
+            </p>
 
-            {/* Documentation */}
-            <div className="grid grid-cols-3 gap-2 relative z-10">
-              {project.docs.map((img, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedImage(img)}
-                  className="overflow-hidden rounded-xl group/img"
-                >
-                  <img
-                    src={img}
-                    alt={`Documentation ${idx + 1}`}
-                    className="w-full h-20 object-cover rounded-xl border border-gray-200 dark:border-gray-700 transition duration-300 group-hover/img:scale-110"
-                  />
-                </button>
-              ))}
-            </div>
+            {/* Button */}
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex mt-7 px-5 py-2.5 rounded-2xl bg-green-500 text-white hover:bg-green-600 transition"
+            >
+              {t.github}
+            </a>
           </motion.div>
         ))}
-      </motion.div>
-
-      {/* Modal Image Viewer */}
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center px-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="relative"
-            >
-              <img
-                src={selectedImage}
-                alt="Preview"
-                className="max-w-5xl max-h-[90vh] rounded-2xl shadow-2xl"
-              />
-
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-4 -right-4 bg-white text-black w-10 h-10 rounded-full text-xl font-bold shadow-lg"
-              >
-                ×
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      </div>
     </section>
   );
 }

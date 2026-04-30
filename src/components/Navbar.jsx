@@ -51,7 +51,7 @@ function Navbar() {
       menu: [
         { name: "Beranda", to: "home" },
         { name: "Tentang", to: "about" },
-        { name: "Pengalaman", to: "work" },
+        { name: "Pengalaman", to: "Work" },
         { name: "Proyek", to: "projects" },
         { name: "Kontak", to: "contact" },
       ],
@@ -62,7 +62,7 @@ function Navbar() {
       menu: [
         { name: "Home", to: "home" },
         { name: "About", to: "about" },
-        { name: "Work Experience", to: "work" },
+        { name: "Work Experience", to: "Work" },
         { name: "Projects", to: "projects" },
         { name: "Contact", to: "contact" },
       ],
