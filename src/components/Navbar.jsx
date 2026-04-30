@@ -1,16 +1,26 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
+import { useLanguage } from "../context/LanguageContext";
+import {
+  FaBars,
+  FaTimes,
+  FaSun,
+  FaMoon,
+  FaGlobe,
+} from "react-icons/fa";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(true);
 
+  // ambil global language context
+  const { lang, toggleLang } = useLanguage();
+
   // INIT THEME
   useEffect(() => {
-    const saved = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("theme");
 
-    if (saved === "light") {
+    if (savedTheme === "light") {
       document.documentElement.classList.remove("dark");
       setDark(false);
     } else {
@@ -19,7 +29,7 @@ function Navbar() {
     }
   }, []);
 
-  // TOGGLE
+  // TOGGLE THEME
   const toggleTheme = () => {
     const html = document.documentElement;
 
@@ -34,22 +44,43 @@ function Navbar() {
     }
   };
 
-  const menu = [
-    { name: "Home", to: "home" },
-    { name: "About", to: "about" },
-    { name: "Projects", to: "projects" },
-    { name: "Contact", to: "contact" },
-  ];
+  // TEXT LANGUAGE
+  const text = {
+    id: {
+      title: "Portofolio Saya",
+      menu: [
+        { name: "Beranda", to: "home" },
+        { name: "Tentang", to: "about" },
+        { name: "Pengalaman", to: "work" },
+        { name: "Proyek", to: "projects" },
+        { name: "Kontak", to: "contact" },
+      ],
+    },
+
+    en: {
+      title: "My Portfolio",
+      menu: [
+        { name: "Home", to: "home" },
+        { name: "About", to: "about" },
+        { name: "Work Experience", to: "work" },
+        { name: "Projects", to: "projects" },
+        { name: "Contact", to: "contact" },
+      ],
+    },
+  };
+
+  const menu = text[lang].menu;
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-800">
-      <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-
+      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+        
+        {/* Logo */}
         <h1 className="text-xl font-bold text-green-500">
-          My Portofolio
+          {text[lang].title}
         </h1>
 
-        {/* DESKTOP */}
+        {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-6">
           {menu.map((item, i) => (
             <Link
@@ -66,16 +97,24 @@ function Navbar() {
             </Link>
           ))}
 
-          {/* TOGGLE */}
+          {/* Language */}
+          <button
+            onClick={toggleLang}
+            className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-green-500 hover:scale-110 transition"
+          >
+            <FaGlobe />
+          </button>
+
+          {/* Theme */}
           <button
             onClick={toggleTheme}
-            className="text-green-500 text-lg"
+            className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-green-500 hover:scale-110 transition"
           >
             {dark ? <FaSun /> : <FaMoon />}
           </button>
         </nav>
 
-        {/* MOBILE BTN */}
+        {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-green-500 text-xl"
@@ -84,9 +123,9 @@ function Navbar() {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden px-4 pb-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div className="md:hidden px-6 pb-5 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
           {menu.map((item, i) => (
             <Link
               key={i}
@@ -96,19 +135,27 @@ function Navbar() {
               duration={500}
               offset={-80}
               onClick={() => setOpen(false)}
-              activeClass="text-green-500"
-              className="block py-2 cursor-pointer text-gray-700 dark:text-gray-300"
+              className="block py-3 text-gray-700 dark:text-gray-300 hover:text-green-500 transition"
             >
               {item.name}
             </Link>
           ))}
 
-          <button
-            onClick={toggleTheme}
-            className="mt-4 text-green-500 text-lg"
-          >
-            {dark ? <FaSun /> : <FaMoon />}
-          </button>
+          <div className="flex gap-3 mt-4">
+            <button
+              onClick={toggleLang}
+              className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-green-500"
+            >
+              <FaGlobe />
+            </button>
+
+            <button
+              onClick={toggleTheme}
+              className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-green-500"
+            >
+              {dark ? <FaSun /> : <FaMoon />}
+            </button>
+          </div>
         </div>
       )}
     </header>
