@@ -14,11 +14,11 @@ function Hero() {
         "Saya adalah fresh graduate Ilmu Komputer Institut Teknologi Bacharuddin Jusuf Habibie angkatan pertama yang memiliki ketertarikan pada pengembangan web dan kecerdasan buatan.",
       button: "🚀 Lihat Project",
       roles: [
-        "Front-End Developer",
-        2000,
         "Web Developer",
         2000,
         "AI Enthusiast",
+        2000,
+        "Student Leader",
         2000,
       ],
       rightDesc:
@@ -31,11 +31,11 @@ function Hero() {
         "I am a fresh graduate in Computer Science from Institut Teknologi Bacharuddin Jusuf Habibie, first generation, with strong interest in web development and artificial intelligence.",
       button: "🚀 View Projects",
       roles: [
-        "Front-End Developer",
-        2000,
         "Web Developer",
         2000,
         "AI Enthusiast",
+        2000,
+        "Student Leader",
         2000,
       ],
       rightDesc:

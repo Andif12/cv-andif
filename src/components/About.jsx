@@ -77,7 +77,7 @@ function About() {
 
         {/* Stack */}
         <div className="mt-16">
-          <h3 className="text-xl font-semibold mb-10 text-gray-800 dark:text-gray-200">
+          <h3 className="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-gray-200">
             {t.stack}
           </h3>
 
