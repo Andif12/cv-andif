@@ -3,15 +3,20 @@ import { createContext, useContext, useState, useEffect } from "react";
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState("id");
+  // DEFAULT ENGLISH
+  const [lang, setLang] = useState("en");
 
   useEffect(() => {
     const saved = localStorage.getItem("lang");
-    if (saved) setLang(saved);
+
+    if (saved) {
+      setLang(saved);
+    }
   }, []);
 
   const toggleLang = () => {
     const newLang = lang === "id" ? "en" : "id";
+
     setLang(newLang);
     localStorage.setItem("lang", newLang);
   };
