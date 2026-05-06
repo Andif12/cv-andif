@@ -112,7 +112,7 @@ function Projects() {
       short: "Deteksi Objek",
       full:
         lang === "id"
-          ? "Sistem Deteksi Objek dengan Dataset Kaggle"
+          ? "Sistem Deteksi Objek dengan Dataset Publik"
           : "Object Detection with Public Dataset",
       year: "2025",
       github: "https://github.com/Andif12/Deteksi-Objek",
