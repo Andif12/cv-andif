@@ -43,7 +43,7 @@ function Organization() {
       org:
         lang === "id"
           ? "BEM Institut Teknologi BJ Habibie"
-          : "Student Executive Board of ITBJ Habibie",
+          : "Student Executive Board of ITH",
 
       year: "2024",
 
