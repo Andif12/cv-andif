@@ -96,10 +96,10 @@ function Organization() {
         "/docs/festival/festival (3).jpg",
         "/docs/festival/festival (4).jpg",
         "/docs/festival/festival (5).jpg",
-        "/docs/festival/festival (6).jpg",
+        "/docs/festival/festival (6).JPG",
         "/docs/festival/festival (7).jpg",
-        "/docs/festival/festival (8).jpg",
-        "/docs/festival/festival (9).jpg",
+        "/docs/festival/festival (8).JPG",
+        "/docs/festival/festival (9).JPG",
         "/docs/festival/festival (10).jpg",
       ],
 
@@ -132,15 +132,15 @@ function Organization() {
 
       featured: true,
 
-      cover: "/docs/pkkmb/PKKMB (1).jpg",
+      cover: "/docs/pkkmb/PKKMB (1).JPG",
 
       gallery: [
-        "/docs/pkkmb/PKKMB (1).jpg",
-        "/docs/pkkmb/PKKMB (2).jpg",
-        "/docs/pkkmb/PKKMB (3).jpg",
-        "/docs/pkkmb/PKKMB (4).jpg",
-        "/docs/pkkmb/PKKMB (5).jpg",
-        "/docs/pkkmb/PKKMB (6).jpg",
+        "/docs/pkkmb/PKKMB (1).JPG",
+        "/docs/pkkmb/PKKMB (2).JPG",
+        "/docs/pkkmb/PKKMB (3).JPG",
+        "/docs/pkkmb/PKKMB (4).JPG",
+        "/docs/pkkmb/PKKMB (5).JPG",
+        "/docs/pkkmb/PKKMB (6).JPG",
       ],
 
       desc:
@@ -172,12 +172,12 @@ function Organization() {
 
       featured: true,
 
-      cover: "/docs/lkmm/lkmm (1).jpg",
+      cover: "/docs/lkmm/lkmm (1).JPG",
 
       gallery: [
-        "/docs/lkmm/lkmm (1).jpg",
-        "/docs/lkmm/lkmm (2).jpg",
-        "/docs/lkmm/lkmm (3).jpg",
+        "/docs/lkmm/lkmm (1).JPG",
+        "/docs/lkmm/lkmm (2).JPG",
+        "/docs/lkmm/lkmm (3).JPG",
       ],
 
       desc:
