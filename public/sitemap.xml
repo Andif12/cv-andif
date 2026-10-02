@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://andimagfirahmaqbul.vercel.app/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://andimagfirahmaqbul.vercel.app/andi-magfirah-maqbul.jpg</image:loc>
+      <image:title>Foto Profil Andi Magfirah Maqbul</image:title>
+      <image:caption>Foto profil resmi Andi Magfirah Maqbul - Full-Stack Web Developer</image:caption>
+    </image:image>
+  </url>
+</urlset>

@@ -99,7 +99,7 @@ function Hero() {
           {/* FOTO BESAR */}
           <img
             src={fiks}
-            alt="Andi Magfirah Maqbul"
+            alt="Foto Profil Andi Magfirah Maqbul"
             className="w-80 md:w-[430px] relative z-10 object-contain drop-shadow-[0_20px_45px_rgba(34,197,94,0.25)]"
           />
         </motion.div>
